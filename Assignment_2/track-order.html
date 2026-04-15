@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Order — Golden Hive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .track-page { min-height: calc(100vh - 120px); background: var(--bg-accent); display: flex; flex-direction: column; justify-content: center; padding: 56px 24px; }
+    .track-inner { max-width: 600px; margin: 0 auto; width: 100%; }
+    .track-header { text-align: center; margin-bottom: 36px; }
+    .track-header .tag { display: inline-block; background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 14px; }
+    .track-header h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
+    .track-header p { color: var(--text-muted); font-size: 14px; max-width: 420px; margin: 0 auto; }
+    .track-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-md); }
+    .track-card .input-group { margin-bottom: 16px; }
+    .track-card-footer { margin-top: 8px; }
+    .track-result { margin-top: 24px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; }
+    .track-result-header { background: var(--primary-bg); padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .track-result-header h3 { font-size: 16px; font-weight: 800; }
+    .track-result-body { padding: 28px; }
+    .tracking-meta { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 28px; }
+    .meta-item label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); display: block; margin-bottom: 4px; }
+    .meta-item p { font-size: 14px; font-weight: 600; }
+    .track-timeline { position: relative; padding-left: 28px; }
+    .track-timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+    .timeline-step { position: relative; padding: 0 0 28px 20px; }
+    .timeline-step:last-child { padding-bottom: 0; }
+    .tl-dot { position: absolute; left: -28px; top: 2px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--border); background: var(--white); z-index: 1; }
+    .tl-dot.done { background: var(--primary); border-color: var(--primary); }
+    .tl-dot.active { background: var(--white); border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-bg); }
+    .tl-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+    .tl-detail { font-size: 13px; color: var(--text-muted); }
+    .tl-time { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg>
+      Golden Hive
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <a href="#"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+      <a href="login.html"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="cart.html" class="cart-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-badge">3</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="track-page">
+    <div class="track-inner">
+      <div class="track-header">
+        <div class="tag">Order Tracking</div>
+        <h1>Track Your Order</h1>
+        <p>Enter your order number and email address to see the latest status of your shipment.</p>
+      </div>
+
+      <div class="track-card">
+        <div class="input-group">
+          <label>Order Number</label>
+          <input type="text" class="input-field" value="GH-8492" placeholder="e.g. GH-8492" />
+        </div>
+        <div class="input-group">
+          <label>Email Address</label>
+          <input type="email" class="input-field" value="sarah.jenkins@example.com" placeholder="Email address on the order" />
+        </div>
+        <div class="track-card-footer">
+          <button type="button" class="btn btn-primary btn-lg btn-full">Track Order</button>
+        </div>
+      </div>
+
+      <div class="track-result">
+        <div class="track-result-header">
+          <div>
+            <h3>Order #GH-8492</h3>
+          </div>
+          <span class="badge badge-primary">In Transit</span>
+        </div>
+        <div class="track-result-body">
+          <div class="tracking-meta">
+            <div class="meta-item">
+              <label>Estimated Delivery</label>
+              <p>Oct 15, 2023</p>
+            </div>
+            <div class="meta-item">
+              <label>Carrier</label>
+              <p>FedEx</p>
+            </div>
+            <div class="meta-item">
+              <label>Tracking #</label>
+              <p style="font-family:monospace;font-size:12px;">7749 2031 3398</p>
+            </div>
+          </div>
+
+          <div class="track-timeline">
+            <div class="timeline-step">
+              <div class="tl-dot done"></div>
+              <div class="tl-title">Order Placed</div>
+              <div class="tl-detail">Your order was confirmed and payment received.</div>
+              <div class="tl-time">Oct 12, 2023 · 9:41 AM</div>
+            </div>
+            <div class="timeline-step">
+              <div class="tl-dot done"></div>
+              <div class="tl-title">Processing</div>
+              <div class="tl-detail">Your items are being packed at our farm.</div>
+              <div class="tl-time">Oct 12, 2023 · 2:15 PM</div>
+            </div>
+            <div class="timeline-step">
+              <div class="tl-dot done"></div>
+              <div class="tl-title">Shipped</div>
+              <div class="tl-detail">Package picked up by FedEx — en route to destination.</div>
+              <div class="tl-time">Oct 13, 2023 · 8:00 AM</div>
+            </div>
+            <div class="timeline-step">
+              <div class="tl-dot active"></div>
+              <div class="tl-title" style="color:var(--primary);">In Transit</div>
+              <div class="tl-detail">Package arrived at Seattle, WA sorting facility.</div>
+              <div class="tl-time">Oct 14, 2023 · 6:30 AM</div>
+            </div>
+            <div class="timeline-step">
+              <div class="tl-dot"></div>
+              <div class="tl-title" style="color:var(--text-muted);">Out for Delivery</div>
+              <div class="tl-detail" style="color:var(--text-light);">Estimated Oct 15, 2023</div>
+            </div>
+            <div class="timeline-step">
+              <div class="tl-dot"></div>
+              <div class="tl-title" style="color:var(--text-muted);">Delivered</div>
+              <div class="tl-detail" style="color:var(--text-light);">Estimated Oct 15, 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg> Golden Hive</a><p>Delivering nature's sweetest superfood directly to your table.</p></div>
+      <div class="footer-col"><h4>Shop</h4><a href="products.html">All Products</a><a href="products.html">Raw Honey</a><a href="products.html">Honeycomb</a><a href="gifts.html">Gifts &amp; Bundles</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="process.html">Our Process</a><a href="about.html">Sustainability</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="faqs.html">FAQs</a><a href="shipping.html">Shipping &amp; Returns</a><a href="track-order.html">Track Order</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Golden Hive. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
