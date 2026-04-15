@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Process — Golden Hive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .process-hero { text-align: center; padding: 56px 24px 48px; }
+    .process-hero .tag { display: inline-block; background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+    .process-hero h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+    .process-hero p { color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+    .process-steps { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 80px; }
+    .process-step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .process-step.reverse { direction: rtl; }
+    .process-step.reverse > * { direction: ltr; }
+    .step-img-wrap {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .step-img-wrap img { width: 100%; height: 340px; object-fit: cover; display: block; }
+    .step-num {
+      position: absolute; top: 20px; left: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--primary); color: #fff;
+      font-size: 18px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+    .step-content {}
+    .step-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary-bg); color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 4px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 700; margin-bottom: 14px;
+    }
+    .step-content h2 { font-size: 28px; font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .step-content p { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+    .quality-section { background: var(--bg-accent); padding: 64px 24px; }
+    .quality-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+    .quality-inner h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .quality-inner > p { color: var(--text-muted); margin-bottom: 40px; }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .quality-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px 24px; box-shadow: var(--shadow); text-align: center; }
+    .quality-icon { font-size: 28px; margin-bottom: 12px; }
+    .quality-card h3 { font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+    .quality-card p { font-size: 13px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg>
+      Golden Hive
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <a href="#"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+      <a href="login.html"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="cart.html" class="cart-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-badge">3</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="process-hero">
+    <div class="tag">Transparent by Design</div>
+    <h1>From Hive to Home</h1>
+    <p>We believe you deserve to know exactly how your honey is made. Here is an honest look at our entire process, step by step.</p>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-img-wrap">
+        <div class="step-num">1</div>
+        <img src="https://images.unsplash.com/photo-1559715745-e1b33a271c8f?w=700&q=80" alt="Bees foraging on flowers" />
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Step 01</div>
+        <h2>Careful Foraging</h2>
+        <p>Our bees forage freely across pesticide-free meadows, wildflower fields, and forest edges. We carefully site our hives in locations rich with diverse floral sources, ensuring our bees have access to the widest variety of nectars throughout the season. The diversity of their forage is what gives our wildflower honey its uniquely complex, layered flavor.</p>
+      </div>
+    </div>
+
+    <div class="process-step reverse">
+      <div class="step-img-wrap">
+        <div class="step-num">2</div>
+        <img src="https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?w=700&q=80" alt="Ethical harvesting from beehives" />
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Step 02</div>
+        <h2>Ethical Harvesting</h2>
+        <p>We only harvest surplus honey — never taking so much that the colony would struggle. Our beekeepers gently brush bees off the frames by hand, without harsh smoke or chemicals. Fully-capped frames are transported to our on-farm extraction room the same day to preserve maximum freshness and nutritional integrity.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-img-wrap">
+        <div class="step-num">3</div>
+        <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=700&q=80" alt="Cold extraction process" />
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Step 03</div>
+        <h2>Cold Extraction</h2>
+        <p>Frames are uncapped and spun in a stainless-steel extractor. The honey is gravity-strained through a coarse mesh to remove wax, without any heat or high-pressure filtration that would destroy delicate pollen and enzymes. We never exceed 95°F — the natural temperature of the hive — ensuring all nutrients remain fully intact.</p>
+      </div>
+    </div>
+
+    <div class="process-step reverse">
+      <div class="step-img-wrap">
+        <div class="step-num">4</div>
+        <img src="https://images.unsplash.com/photo-1601924638867-3a6de6b7a500?w=700&q=80" alt="Pure honey bottling in glass jars" />
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Step 04</div>
+        <h2>Pure Bottling</h2>
+        <p>Our honey is poured directly into glass jars and sealed — that's it. No additives, no preservatives, no artificial colors or flavors. Each jar is labelled by harvest date and floral source so you always know exactly what you're getting. We use glass exclusively to protect the honey's natural flavor and prevent any chemical leaching.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="quality-section">
+    <div class="quality-inner">
+      <h2>Our Quality Commitments</h2>
+      <p>Every jar we sell is backed by these guarantees.</p>
+      <div class="quality-grid">
+        <div class="quality-card">
+          <div class="quality-icon">🌿</div>
+          <h3>Never Pasteurized</h3>
+          <p>Our honey is never heated above 95°F, preserving all natural enzymes, antioxidants, and vitamins.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-icon">🔬</div>
+          <h3>Batch Tested</h3>
+          <p>Every batch is tested for purity and quality before it leaves our farm to ensure it meets our strict standards.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-icon">🫙</div>
+          <h3>Glass Jars Only</h3>
+          <p>We use only glass jars to prevent any chemical leaching and preserve the honey's natural flavor and quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg> Golden Hive</a><p>Delivering nature's sweetest superfood directly to your table.</p></div>
+      <div class="footer-col"><h4>Shop</h4><a href="products.html">All Products</a><a href="products.html">Raw Honey</a><a href="products.html">Honeycomb</a><a href="gifts.html">Gifts &amp; Bundles</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="process.html">Our Process</a><a href="about.html">Sustainability</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="faqs.html">FAQs</a><a href="shipping.html">Shipping &amp; Returns</a><a href="track-order.html">Track Order</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Golden Hive. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
