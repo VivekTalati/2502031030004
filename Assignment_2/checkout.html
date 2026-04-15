@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Golden Hive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .checkout-layout {
+      display: grid; grid-template-columns: 1fr 360px; gap: 40px;
+      max-width: var(--max-w); margin: 0 auto; padding: 48px 24px 80px;
+    }
+    .checkout-h1 { font-size: 30px; font-weight: 800; margin-bottom: 28px; }
+    .step-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 24px; }
+    .step-title { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 800; margin-bottom: 24px; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .payment-opt {
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      padding: 12px 16px; margin-bottom: 10px; cursor: pointer;
+      display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px;
+    }
+    .payment-opt.selected { border-color: var(--primary); background: var(--primary-bg); }
+    .payment-opt input[type="radio"] { accent-color: var(--primary); }
+    .order-side { background: var(--primary-bg); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; height: fit-content; }
+    .order-side h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
+    .order-product { display: flex; gap: 12px; margin-bottom: 14px; align-items: center; }
+    .order-thumb { width: 48px; height: 48px; border-radius: 8px; background: var(--bg-muted); overflow: hidden; flex-shrink: 0; }
+    .order-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .order-product h4 { font-size: 13px; font-weight: 700; }
+    .order-product p { font-size: 12px; color: var(--primary); font-weight: 700; }
+    .summary-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-mid); margin-bottom: 10px; }
+    .summary-row.total { font-weight: 800; font-size: 16px; color: var(--text); padding-top: 14px; border-top: 1px solid var(--border); margin-top: 6px; }
+    .secure-note { text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg> Golden Hive</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <a href="login.html"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="cart.html" class="cart-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-badge">3</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="checkout-layout">
+    <div>
+      <h1 class="checkout-h1">Checkout</h1>
+
+      <div class="step-block">
+        <div class="step-title"><div class="step-num">1</div> Shipping Address</div>
+        <form>
+          <div class="two-col">
+            <div class="input-group"><label>First Name</label><input type="text" class="input-field" value="John" /></div>
+            <div class="input-group"><label>Last Name</label><input type="text" class="input-field" value="Doe" /></div>
+          </div>
+          <div class="input-group"><label>Email Address</label><input type="email" class="input-field" value="john.doe@example.com" /></div>
+          <div class="input-group"><label>Street Address</label><input type="text" class="input-field" value="123 Honeybee Lane" /></div>
+          <div class="two-col">
+            <div class="input-group"><label>City</label><input type="text" class="input-field" value="Seattle" /></div>
+            <div class="input-group"><label>State / Province</label><input type="text" class="input-field" value="WA" /></div>
+          </div>
+          <div class="two-col">
+            <div class="input-group"><label>ZIP / Postal Code</label><input type="text" class="input-field" value="98101" /></div>
+            <div class="input-group"><label>Country</label><input type="text" class="input-field" value="United States" /></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="step-block">
+        <div class="step-title"><div class="step-num">2</div> Payment Method</div>
+        <div class="payment-opt selected">
+          <input type="radio" name="pay" checked /> 💳 Credit Card
+        </div>
+        <div class="payment-opt">
+          <input type="radio" name="pay" /> PayPal
+        </div>
+        <div style="margin-top:20px;">
+          <div class="input-group"><label>Card Number</label><input type="text" class="input-field" placeholder="0000 0000 0000 0000" /></div>
+          <div class="two-col">
+            <div class="input-group"><label>Expiration Date (MM/YY)</label><input type="text" class="input-field" placeholder="MM/YY" /></div>
+            <div class="input-group"><label>CVC</label><input type="text" class="input-field" placeholder="123" /></div>
+          </div>
+          <div class="input-group"><label>Name on Card</label><input type="text" class="input-field" placeholder="John Doe" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-side">
+      <h3>Order Summary</h3>
+      <div class="order-product">
+        <div class="order-thumb"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=100&q=80" alt="" /></div>
+        <div><h4>Raw Wildflower Honey</h4><p>Qty: 1 — $14.99</p></div>
+      </div>
+      <div class="order-product">
+        <div class="order-thumb"><img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=100&q=80" alt="" /></div>
+        <div><h4>Premium Honeycomb Jar</h4><p>Qty: 2 — $48.00</p></div>
+      </div>
+      <div class="summary-row" style="margin-top:20px;"><span>Subtotal</span><span>$62.99</span></div>
+      <div class="summary-row"><span>Shipping</span><span>$5.00</span></div>
+      <div class="summary-row"><span>Tax (8%)</span><span>$5.04</span></div>
+      <div class="summary-row total"><span>Total</span><span>$73.03</span></div>
+      <a href="profile.html" class="btn btn-primary btn-lg btn-full" style="margin-top:20px;">Place Order · $73.03</a>
+      <p class="secure-note">🔒 Secure encrypted checkout</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg> Golden Hive</a><p>Delivering nature's sweetest superfood directly to your table.</p></div>
+      <div class="footer-col"><h4>Shop</h4><a href="products.html">All Products</a><a href="gifts.html">Gifts &amp; Bundles</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="faqs.html">FAQs</a><a href="shipping.html">Shipping &amp; Returns</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Golden Hive. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
